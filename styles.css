@@ -243,8 +243,8 @@ p { margin: 0 0 0.9rem; }
   transform: rotate(-1.4deg); margin-inline: -3%; padding-block: 0.9rem;
   border-block: 1.5px solid var(--ink);
 }
-.band-track { display: flex; width: max-content; }
-.band-set { display: flex; flex-shrink: 0; }
+.band-track { display: flex; justify-content: center; }
+.band-set { display: flex; flex-wrap: wrap; justify-content: center; row-gap: 0.3rem; padding-inline: 3%; }
 .band-set span {
   font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase;
   font-size: clamp(1.4rem, 3.4vw, 2.4rem); line-height: 1; padding-inline: 1.2rem; white-space: nowrap;
@@ -253,10 +253,6 @@ p { margin: 0 0 0.9rem; }
 .band-set span::after { content: ""; width: 0.7em; height: 0.7em; border-radius: 50%; background: var(--accent-ink-band, #2b39ff); }
 :root[data-theme="dark"] .band { background: var(--lime); color: #0e0f14; }
 :root[data-theme="dark"] .band-set span::after { background: #0e0f14; }
-@media (prefers-reduced-motion: no-preference) {
-  .band-track { animation: slide 32s linear infinite; }
-}
-@keyframes slide { to { transform: translateX(-50%); } }
 
 /* =============================================================
    5. Secciones
