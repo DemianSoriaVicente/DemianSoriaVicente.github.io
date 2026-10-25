@@ -103,18 +103,15 @@
       if (sec) map.set(sec, a);
     });
     if (!map.size) return;
-    const hero = $(".hero");
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (!e.isIntersecting) return;
         const a = map.get(e.target);
-        if (!a && e.target !== hero) return;
         links.forEach((l) => l.removeAttribute("aria-current"));
         if (a) a.setAttribute("aria-current", "true");
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
-    map.forEach((_, sec) => io.observe(sec));
-    if (hero) io.observe(hero);
+    $$("main > section").forEach((sec) => io.observe(sec));
   }
 
   /* ----------------------------------------------------------

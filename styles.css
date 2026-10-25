@@ -229,14 +229,12 @@ p { margin: 0 0 0.9rem; text-wrap: pretty; }
 .tl p { margin: 0; color: var(--muted); max-width: 46rem; }
 
 /* Formación + certificaciones */
-.two { display: grid; gap: 2.2rem; }
-@media (min-width: 760px) { .two { grid-template-columns: 1fr 1fr; gap: 3rem; } }
-.two h3 { margin: 0 0 0.9rem; font-family: var(--mono); font-size: 0.85rem; font-weight: 500; color: var(--accent); }
 .list { margin: 0; padding: 0; list-style: none; }
 .list li { padding: 0.55rem 0; border-bottom: 1px solid var(--line); }
 .list li:last-child { border-bottom: 0; }
 .list small { display: block; color: var(--muted); font-size: 0.88rem; }
 .list .when { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+@media (min-width: 760px) { .list.cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; } }
 
 /* Stack */
 .stack { display: grid; gap: 0.4rem 2rem; margin: 0; }
