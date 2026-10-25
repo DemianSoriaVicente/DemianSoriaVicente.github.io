@@ -26,7 +26,7 @@ assets/         Fonts and images
 
 ## Hosting
 
-Published with GitHub Pages from the `main` branch. Pushing to `main` deploys the site.
+Published with GitHub Pages
 
 ---
 
@@ -58,4 +58,4 @@ assets/         Fuentes e imágenes
 
 ## Publicación
 
-Publicada con GitHub Pages desde la rama `main`. Al hacer push a `main` se despliega la web.
+Publicada con GitHub Pages
