@@ -6,7 +6,7 @@
   <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}document.documentElement.classList.add("js")</script>
   <title>Demian Soria Vicente — Desarrollador web · IA y automatización</title>
   <meta name="description" content="Demian Soria Vicente, desarrollador web y técnico de soporte TIC en Almería. Webs a medida, aplicaciones, IA y automatización, y SEO. Currículum y contacto.">
-  <meta name="theme-color" content="#0a0e14">
+  <meta name="theme-color" content="#edeffd">
   <link rel="canonical" href="https://demiansoriavicente.github.io/">
   <link rel="alternate" hreflang="es" href="https://demiansoriavicente.github.io/">
   <link rel="alternate" hreflang="en" href="https://demiansoriavicente.github.io/en/">
@@ -23,9 +23,8 @@
   <meta property="og:locale:alternate" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20261025g">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261025k">
 
   <script type="application/ld+json">
   {
@@ -49,19 +48,19 @@
   <a class="skip-link" href="#main">Saltar al contenido</a>
 
   <header class="nav">
-    <div class="wrap">
-      <a class="brand" href="#inicio" aria-label="Demian Soria Vicente — inicio">~/<span>demian</span></a>
+    <div class="nav-in">
       <nav aria-label="Principal">
-        <ul class="nav-links">
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#experiencia">Experiencia</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+        <ul class="pills nav-links">
+          <li><a class="pill" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="pill" href="#servicios">Servicios</a></li>
+          <li><a class="pill" href="#experiencia">Experiencia</a></li>
         </ul>
       </nav>
+      <a class="brand" href="#inicio" aria-label="Demian Soria Vicente — inicio">Demian</a>
       <div class="tools">
-        <a class="pill" href="en/" hreflang="en" lang="en" aria-label="Read this page in English">EN</a>
+        <a class="pill mono" href="en/" hreflang="en" lang="en" aria-label="Read this page in English">EN</a>
         <button class="pill theme-toggle" type="button" data-theme-toggle aria-label="Cambiar entre tema claro y oscuro">◐ tema</button>
+        <a class="cta" href="#contacto">Hablemos <span class="dot" aria-hidden="true">↗</span></a>
       </div>
     </div>
   </header>
@@ -70,28 +69,31 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="inicio">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="prompt"><span class="path">~/portfolio</span> $ whoami</p>
-          <h1>Demian <span class="grad">Soria Vicente</span></h1>
-          <p class="role">Desarrollador web · Técnico de soporte TIC</p>
-          <p class="typed-line">
-            <span class="arrow" aria-hidden="true">&gt;</span>
-            <span data-typed data-words='["web a medida","aplicaciones","IA y automatización","SEO"]'>web a medida</span><span class="caret" aria-hidden="true"></span>
-          </p>
-          <p class="lede">
-            Creo webs y aplicaciones y uso la IA y la automatización para trabajar mejor. Mi día a día
-            es el soporte técnico de sistemas de alarma y videovigilancia; mi pasión, construir cosas
-            con código.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#contacto">Hablemos</a>
-            <a class="btn" href="#servicios">Ver servicios</a>
-          </div>
+      <svg class="scribble s1" viewBox="0 0 400 420" aria-hidden="true"><path d="M-30 90 C 150 -10, 330 90, 250 190 C 180 280, 40 250, 90 150 C 130 70, 300 120, 340 260 C 370 360, 250 430, 120 400"/></svg>
+      <svg class="scribble s2" viewBox="0 0 400 420" aria-hidden="true"><path d="M430 60 C 250 -20, 90 70, 170 170 C 240 260, 380 220, 330 130 C 290 60, 120 110, 80 250 C 50 350, 170 420, 300 380"/></svg>
+      <div class="wrap">
+        <p class="prompt"><b>~/portfolio</b> $ whoami</p>
+        <div class="hero-head">
+          <h1 class="hero-title display">
+            <span class="line">Demian</span>
+            <span class="line">Soria Vicente</span>
+          </h1>
+          <span class="sticker st1" aria-hidden="true">Desarrollo web</span>
+          <span class="sticker st2 lime" aria-hidden="true">IA y automatización</span>
+          <span class="sticker st3" aria-hidden="true">SEO</span>
+          <span class="sticker st4" aria-hidden="true">Almería, ES</span>
         </div>
-
-        <div class="code-card" aria-hidden="true">
-          <div class="code-bar"><i></i><i></i><i></i><span>demian.js</span></div>
+        <div class="hero-bottom">
+          <div>
+            <p class="role">Desarrollador web · Técnico de soporte TIC</p>
+            <p class="lede">Creo webs y aplicaciones y uso la IA y la automatización para trabajar mejor. Mi día a día es el soporte técnico de sistemas de alarma y videovigilancia; mi pasión, construir cosas con código.</p>
+            <div class="actions">
+              <a class="btn solid" href="#contacto">Hablemos</a>
+              <a class="btn ghost" href="#servicios">Ver servicios</a>
+            </div>
+          </div>
+          <div class="code-card" aria-hidden="true">
+            <div class="code-bar"><i></i><i></i><i></i><span>demian.js</span></div>
 <pre><span class="c">// perfil</span>
 <span class="k">const</span> demian = {
   rol:     <span class="s">"Desarrollador web"</span>,
@@ -101,30 +103,31 @@
   ia:      [<span class="s">"Claude Code"</span>, <span class="s">"Ollama"</span>, <span class="s">"Docker"</span>],
   idiomas: [<span class="s">"es"</span>, <span class="s">"en (C1)"</span>],
 };</pre>
+          </div>
         </div>
       </div>
     </section>
 
+    <div class="band-clip" aria-hidden="true">
+      <div class="band">
+        <div class="band-track">
+          <div class="band-set"><span>Desarrollo web</span><span>Aplicaciones</span><span>IA y automatización</span><span>SEO</span><span>Soporte TIC</span></div>
+          <div class="band-set"><span>Desarrollo web</span><span>Aplicaciones</span><span>IA y automatización</span><span>SEO</span><span>Soporte TIC</span></div>
+        </div>
+      </div>
+    </div>
+
     <!-- ============ SOBRE MÍ ============ -->
     <section id="sobre-mi">
-      <div class="wrap about reveal">
-        <div class="sec-head">
-          <p class="tag">// 01 sobre-mi</p>
-          <h2>Perfil profesional</h2>
+      <div class="wrap reveal">
+        <p class="tag"><b>01</b> / sobre-mi</p>
+        <div class="about-grid">
+          <h2 class="display">Perfil<br><em>profesional</em></h2>
+          <div>
+            <p>Técnico de soporte TIC y desarrollador web con experiencia en soporte técnico remoto y presencial de sistemas de alarma y videovigilancia: monitoreo, configuración de grabadores DVR/NVR, validación de instalaciones y resolución de incidencias con plataformas como Ajax PRO, Manitou, SPC y Vanderbilt. Sólida base técnica en Python, HTML, CSS y JavaScript, y uso habitual de herramientas de IA y automatización (Claude Code, Cursor, Docker, Ollama) para trabajar con más eficiencia.</p>
+            <p>Persona metódica, resolutiva y responsable, con buena comunicación y trato cercano con el cliente, capaz de trabajar en equipo y de forma autónoma, con precisión bajo presión y con motivación constante por aprender nuevas tecnologías.</p>
+          </div>
         </div>
-        <p>
-          Técnico de soporte TIC y desarrollador web con experiencia en soporte técnico remoto y
-          presencial de sistemas de alarma y videovigilancia: monitoreo, configuración de grabadores
-          DVR/NVR, validación de instalaciones y resolución de incidencias con plataformas como
-          Ajax PRO, Manitou, SPC y Vanderbilt. Sólida base técnica en Python, HTML, CSS y JavaScript,
-          y uso habitual de herramientas de IA y automatización (Claude Code, Cursor, Docker, Ollama)
-          para trabajar con más eficiencia.
-        </p>
-        <p>
-          Persona metódica, resolutiva y responsable, con buena comunicación y trato cercano con el
-          cliente, capaz de trabajar en equipo y de forma autónoma, con precisión bajo presión y con
-          motivación constante por aprender nuevas tecnologías.
-        </p>
       </div>
     </section>
 
@@ -132,30 +135,30 @@
     <section id="servicios">
       <div class="wrap">
         <div class="sec-head reveal">
-          <p class="tag">// 02 servicios</p>
-          <h2>Qué puedo hacer por ti</h2>
+          <p class="tag"><b>02</b> / servicios</p>
+          <h2 class="display">Qué puedo<br>hacer <em>por ti</em></h2>
           <p class="sub">Trabajo de principio a fin: entiendo lo que necesitas, lo construyo y me quedo para el soporte posterior.</p>
         </div>
         <div class="cards">
-          <article class="card reveal">
+          <article class="card c1 reveal">
             <span class="num">01</span>
             <h3>Desarrollo web a medida</h3>
             <p>Sitios rápidos, accesibles y pensados para tu negocio. Me encargo de todo el proyecto: consultoría inicial, diseño, desarrollo, publicación y soporte posterior, con presupuesto ajustado a lo que necesitas.</p>
             <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Shopify</li></ul>
           </article>
-          <article class="card reveal">
+          <article class="card c2 reveal">
             <span class="num">02</span>
             <h3>Desarrollo de aplicaciones</h3>
             <p>Herramientas y aplicaciones a medida para resolver problemas concretos y quitarte trabajo repetitivo, apoyadas en una base sólida de Python y JavaScript.</p>
             <ul class="chips"><li>Python</li><li>JavaScript</li><li>Docker</li><li>Git</li></ul>
           </article>
-          <article class="card reveal">
+          <article class="card c3 reveal">
             <span class="num">03</span>
             <h3>IA y automatización</h3>
             <p>Integro herramientas de inteligencia artificial en tu forma de trabajar: asistentes de programación, modelos que se ejecutan en local y procesos repetitivos automatizados para ganar tiempo.</p>
             <ul class="chips"><li>Claude Code</li><li>Ollama</li><li>Docker</li><li>ComfyUI</li></ul>
           </article>
-          <article class="card reveal">
+          <article class="card c4 reveal">
             <span class="num">04</span>
             <h3>SEO</h3>
             <p>Estructura, metadatos, rendimiento y accesibilidad cuidados para que tu web se encuentre mejor en buscadores: HTML semántico, datos estructurados, sitemap y tiempos de carga bajos.</p>
@@ -169,29 +172,41 @@
     <section id="experiencia">
       <div class="wrap">
         <div class="sec-head reveal">
-          <p class="tag">// 03 experiencia</p>
-          <h2>Experiencia laboral</h2>
+          <p class="tag"><b>03</b> / experiencia</p>
+          <h2 class="display">Experiencia<br><em>laboral</em></h2>
         </div>
-        <ol class="timeline">
-          <li class="tl now reveal">
-            <h3>Desarrollador web freelance</h3>
-            <p class="meta"><span>Autónomo</span><span class="when">Actualidad</span></p>
-            <p>Diseño y desarrollo de sitios web personalizados para empresas y emprendedores. Gestión integral del proyecto, desde la consultoría inicial hasta la implementación y el soporte posterior. Elaboración de presupuestos competitivos adaptados a las necesidades de cada cliente.</p>
+        <ol class="jobs">
+          <li class="job reveal">
+            <span class="yr">Ahora</span>
+            <div>
+              <h3>Desarrollador web freelance</h3>
+              <p class="meta"><span>Autónomo</span><span class="when">Actualidad</span></p>
+              <p>Diseño y desarrollo de sitios web personalizados para empresas y emprendedores. Gestión integral del proyecto, desde la consultoría inicial hasta la implementación y el soporte posterior. Elaboración de presupuestos competitivos adaptados a las necesidades de cada cliente.</p>
+            </div>
           </li>
-          <li class="tl now reveal">
-            <h3>Técnico SAT</h3>
-            <p class="meta"><span>Grupo Control Seguridad</span><span class="when">Octubre 2022 – Actualidad</span></p>
-            <p>Técnico de sistemas de seguridad y monitoreo de alarmas. Soporte técnico remoto y presencial en sistemas de alarma y videovigilancia: validación y seguimiento de nuevas instalaciones, resolución de incidencias técnicas, configuración remota de grabadores (DVR/NVR), revisiones trimestrales de sistemas grado 3 mediante acceso bidireccional y gestión de altas y bajas de sistemas. Atención al cliente combinando precisión técnica con trato cercano.</p>
+          <li class="job reveal">
+            <span class="yr">2022+</span>
+            <div>
+              <h3>Técnico SAT</h3>
+              <p class="meta"><span>Grupo Control Seguridad</span><span class="when">Octubre 2022 – Actualidad</span></p>
+              <p>Técnico de sistemas de seguridad y monitoreo de alarmas. Soporte técnico remoto y presencial en sistemas de alarma y videovigilancia: validación y seguimiento de nuevas instalaciones, resolución de incidencias técnicas, configuración remota de grabadores (DVR/NVR), revisiones trimestrales de sistemas grado 3 mediante acceso bidireccional y gestión de altas y bajas de sistemas. Atención al cliente combinando precisión técnica con trato cercano.</p>
+            </div>
           </li>
-          <li class="tl reveal">
-            <h3>Segundo de cocina</h3>
-            <p class="meta"><span>Bar La Mala Croquetería (hostelería)</span><span class="when">2018 – 2022</span></p>
-            <p>Elaboración de cartas y menús. Gestión de inventario y stocks. Documentación y cumplimiento de normas de higiene. Colaboración en equipo en un entorno dinámico.</p>
+          <li class="job reveal">
+            <span class="yr">2018–22</span>
+            <div>
+              <h3>Segundo de cocina</h3>
+              <p class="meta"><span>Bar La Mala Croquetería (hostelería)</span><span class="when">2018 – 2022</span></p>
+              <p>Elaboración de cartas y menús. Gestión de inventario y stocks. Documentación y cumplimiento de normas de higiene. Colaboración en equipo en un entorno dinámico.</p>
+            </div>
           </li>
-          <li class="tl reveal">
-            <h3>Teleoperador de telemarketing</h3>
-            <p class="meta"><span>Campaña de subvenciones de Red.es</span><span class="when">2015 – 2018</span></p>
-            <p>Telemarketing para una campaña de captación en subvenciones de Red.es. Procesamiento de documentación, resolución de incidencias técnicas y atención a solicitantes. Ampliación de funciones hacia la venta de páginas web, elaboración de presupuestos y seguimiento de ofertas.</p>
+          <li class="job reveal">
+            <span class="yr">2015–18</span>
+            <div>
+              <h3>Teleoperador de telemarketing</h3>
+              <p class="meta"><span>Campaña de subvenciones de Red.es</span><span class="when">2015 – 2018</span></p>
+              <p>Telemarketing para una campaña de captación en subvenciones de Red.es. Procesamiento de documentación, resolución de incidencias técnicas y atención a solicitantes. Ampliación de funciones hacia la venta de páginas web, elaboración de presupuestos y seguimiento de ofertas.</p>
+            </div>
           </li>
         </ol>
       </div>
@@ -201,14 +216,11 @@
     <section id="formacion">
       <div class="wrap reveal">
         <div class="sec-head">
-          <p class="tag">// 04 formacion</p>
-          <h2>Formación</h2>
+          <p class="tag"><b>04</b> / formacion</p>
+          <h2 class="display">Formación</h2>
         </div>
         <ul class="list">
-          <li>
-            Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes
-              <small>ILERNA Online · Completado</small>
-          </li>
+          <li>Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes<small>ILERNA Online · Completado</small></li>
         </ul>
       </div>
     </section>
@@ -217,20 +229,20 @@
     <section id="certificaciones">
       <div class="wrap">
         <div class="sec-head reveal">
-          <p class="tag">// 05 certificaciones</p>
-          <h2>Certificaciones</h2>
+          <p class="tag"><b>05</b> / certificaciones</p>
+          <h2 class="display">Certifi&shy;caciones</h2>
         </div>
         <ul class="list cols reveal">
-            <li>Amadeus Agente de Reservas<small>Centro de Estudios Aeronáuticos CEAE · <span class="when">Sep 2026</span></small></li>
-            <li>Responsive Web Design<small>freeCodeCamp · <span class="when">Oct 2026</span></small></li>
-            <li>Legacy JavaScript Algorithms and Data Structures V7<small>freeCodeCamp · <span class="when">Oct 2026</span></small></li>
-            <li>Legacy Responsive Web Design V8<small>freeCodeCamp · <span class="when">Oct 2026</span></small></li>
-            <li>Claude Academy: Model Context Protocol: Advanced topics<small>Anthropic · <span class="when">Oct 2026</span></small></li>
-            <li>Claude Academy: Introduction to Model Context Protocol<small>Anthropic · <span class="when">Oct 2026</span></small></li>
-            <li>Claude Academy: Claude Code in action<small>Anthropic · <span class="when">Oct 2026</span></small></li>
-            <li>Claude Academy: Claude Code 101<small>Anthropic · <span class="when">Oct 2026</span></small></li>
-            <li>Iniciación al Desarrollo con IA<small>BIG School · <span class="when">Oct 2026</span></small></li>
-            <li>C1 English<small>EF International Language Centers · <span class="when">Abr 2023</span></small></li>
+          <li>Amadeus Agente de Reservas<small>Centro de Estudios Aeronáuticos CEAE · <span class="when">Sep 2026</span></small></li>
+          <li>Responsive Web Design<small>freeCodeCamp · <span class="when">Oct 2026</span></small></li>
+          <li>Legacy JavaScript Algorithms and Data Structures V7<small>freeCodeCamp · <span class="when">Oct 2026</span></small></li>
+          <li>Legacy Responsive Web Design V8<small>freeCodeCamp · <span class="when">Oct 2026</span></small></li>
+          <li>Claude Academy: Model Context Protocol: Advanced topics<small>Anthropic · <span class="when">Oct 2026</span></small></li>
+          <li>Claude Academy: Introduction to Model Context Protocol<small>Anthropic · <span class="when">Oct 2026</span></small></li>
+          <li>Claude Academy: Claude Code in action<small>Anthropic · <span class="when">Oct 2026</span></small></li>
+          <li>Claude Academy: Claude Code 101<small>Anthropic · <span class="when">Oct 2026</span></small></li>
+          <li>Iniciación al Desarrollo con IA<small>BIG School · <span class="when">Oct 2026</span></small></li>
+          <li>C1 English<small>EF International Language Centers · <span class="when">Abr 2023</span></small></li>
         </ul>
       </div>
     </section>
@@ -239,79 +251,79 @@
     <section id="tecnologias">
       <div class="wrap">
         <div class="sec-head reveal">
-          <p class="tag">// 06 stack</p>
-          <h2>Tecnologías e idiomas</h2>
+          <p class="tag"><b>06</b> / stack</p>
+          <h2 class="display">Tecnologías<br><em>e idiomas</em></h2>
         </div>
         <dl class="stack reveal">
           <dt>desarrollo</dt>
-          <dd>Python, HTML, CSS, JavaScript, Git, VS Code, Docker</dd>
+          <dd><ul class="chips"><li>Python</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git</li><li>VS Code</li><li>Docker</li></ul></dd>
           <dt>ia_y_automatización</dt>
-          <dd>Claude Code, OpenCode, Cursor, Warp, Ollama, ComfyUI</dd>
+          <dd><ul class="chips"><li>Claude Code</li><li>OpenCode</li><li>Cursor</li><li>Warp</li><li>Ollama</li><li>ComfyUI</li></ul></dd>
           <dt>datos_y_gestión</dt>
-          <dd>Power BI, Microsoft Excel, paquete Office, sistemas CRM, Obsidian</dd>
+          <dd><ul class="chips"><li>Power BI</li><li>Microsoft Excel</li><li>Paquete Office</li><li>Sistemas CRM</li><li>Obsidian</li></ul></dd>
           <dt>comercio_online</dt>
-          <dd>Shopify, AutoDS, marketing de afiliados</dd>
+          <dd><ul class="chips"><li>Shopify</li><li>AutoDS</li><li>Marketing de afiliados</li></ul></dd>
           <dt>monitoreo_alarmas</dt>
-          <dd>Ajax PRO, Domo, PC, FrontShell, Frontel, TMT2, Manitou, CS, SPC, Vanderbilt MAX PRO</dd>
+          <dd><ul class="chips"><li>Ajax PRO</li><li>Domo</li><li>PC</li><li>FrontShell</li><li>Frontel</li><li>TMT2</li><li>Manitou</li><li>CS</li><li>SPC</li><li>Vanderbilt MAX PRO</li></ul></dd>
           <dt>idiomas</dt>
-          <dd>Español (nativo), inglés (C1)</dd>
+          <dd><ul class="chips"><li>Español (nativo)</li><li>Inglés (C1)</li></ul></dd>
         </dl>
       </div>
     </section>
 
     <!-- ============ CONTACTO ============ -->
-    <section id="contacto">
-      <div class="wrap contact-grid">
+    <section class="contact" id="contacto">
+      <div class="wrap">
         <div class="reveal">
-          <div class="sec-head">
-            <p class="tag">// 07 contacto</p>
-            <h2>Hablemos</h2>
-            <p class="sub">Cuéntame tu proyecto o tu idea y te respondo personalmente.</p>
-          </div>
-          <ul class="links">
+          <p class="tag"><b>07</b> / contacto</p>
+          <h2 class="display">Hable&shy;mos</h2>
+          <p class="sub">Cuéntame tu proyecto o tu idea y te respondo personalmente.</p>
+        </div>
+        <div class="contact-grid">
+          <ul class="links reveal">
             <li>
-              <span class="lbl">email</span><a href="mailto:demiansoriav@gmail.com">demiansoriav@gmail.com</a>
+              <span class="lbl">email</span><a class="pill" href="mailto:demiansoriav@gmail.com">demiansoriav@gmail.com</a>
               <button class="pill copy" type="button" data-copy="demiansoriav@gmail.com" data-copied="¡Copiado!">copiar</button>
             </li>
-            <li><span class="lbl">linkedin</span><a href="https://www.linkedin.com/in/demian-soria-vicente" rel="me noopener">/in/demian-soria-vicente</a></li>
-            <li><span class="lbl">github</span><a href="https://github.com/DemianSoriaVicente" rel="me noopener">/DemianSoriaVicente</a></li>
-            <li><span class="lbl">ubicación</span>Almería, España</li>
+            <li><span class="lbl">linkedin</span><a class="pill" href="https://www.linkedin.com/in/demian-soria-vicente" rel="me noopener">/in/demian-soria-vicente</a></li>
+            <li><span class="lbl">github</span><a class="pill" href="https://github.com/DemianSoriaVicente" rel="me noopener">/DemianSoriaVicente</a></li>
+            <li><span class="lbl">ubicación</span><span class="plain">Almería, España</span></li>
           </ul>
-        </div>
 
-        <form class="reveal" id="contact-form" novalidate
-              action="mailto:demiansoriav@gmail.com" method="post" enctype="text/plain"
-              data-to="demiansoriav@gmail.com"
-              data-subject="Contacto desde la web"
-              data-label-name="Nombre" data-label-email="Correo" data-label-msg="Mensaje"
-              data-e-name="Escribe tu nombre." data-e-email="Escribe un correo válido." data-e-msg="Escribe un mensaje (mínimo 10 caracteres)."
-              data-ok="Se abrirá tu programa de correo con el mensaje listo. Pulsa enviar allí para terminar."
-              data-copy-hint="Si no se abre, escríbeme directamente a">
-          <div class="field">
-            <label for="f-name">nombre</label>
-            <input id="f-name" name="nombre" type="text" autocomplete="name" required maxlength="100">
-            <p class="err" data-err="name" aria-live="polite"></p>
-          </div>
-          <div class="field">
-            <label for="f-email">correo</label>
-            <input id="f-email" name="correo" type="email" autocomplete="email" required maxlength="150">
-            <p class="err" data-err="email" aria-live="polite"></p>
-          </div>
-          <div class="field">
-            <label for="f-msg">mensaje</label>
-            <textarea id="f-msg" name="mensaje" required minlength="10" maxlength="1500"></textarea>
-            <p class="err" data-err="msg" aria-live="polite"></p>
-          </div>
-          <div class="field hp" aria-hidden="true">
-            <label for="f-web">No rellenar</label>
-            <input id="f-web" name="web" type="text" tabindex="-1" autocomplete="off">
-          </div>
-          <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Enviar mensaje</button>
-          </div>
-          <p class="status" role="status" aria-live="polite" data-status></p>
-          <p class="note">Este formulario abre tu programa de correo con el mensaje preparado; no se guarda nada en esta web.</p>
-        </form>
+          <form class="reveal" id="contact-form" novalidate
+                action="mailto:demiansoriav@gmail.com" method="post" enctype="text/plain"
+                data-to="demiansoriav@gmail.com"
+                data-subject="Contacto desde la web"
+                data-label-name="Nombre" data-label-email="Correo" data-label-msg="Mensaje"
+                data-e-name="Escribe tu nombre." data-e-email="Escribe un correo válido." data-e-msg="Escribe un mensaje (mínimo 10 caracteres)."
+                data-ok="Se abrirá tu programa de correo con el mensaje listo. Pulsa enviar allí para terminar."
+                data-copy-hint="Si no se abre, escríbeme directamente a">
+            <div class="field">
+              <label for="f-name">nombre</label>
+              <input id="f-name" name="nombre" type="text" autocomplete="name" required maxlength="100">
+              <p class="err" data-err="name" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-email">correo</label>
+              <input id="f-email" name="correo" type="email" autocomplete="email" required maxlength="150">
+              <p class="err" data-err="email" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-msg">mensaje</label>
+              <textarea id="f-msg" name="mensaje" required minlength="10" maxlength="1500"></textarea>
+              <p class="err" data-err="msg" aria-live="polite"></p>
+            </div>
+            <div class="field hp" aria-hidden="true">
+              <label for="f-web">No rellenar</label>
+              <input id="f-web" name="web" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <div>
+              <button class="btn solid" type="submit">Enviar mensaje</button>
+            </div>
+            <p class="status" role="status" aria-live="polite" data-status></p>
+            <p class="note">Este formulario abre tu programa de correo con el mensaje preparado; no se guarda nada en esta web.</p>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -324,6 +336,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=20261025g" defer></script>
+  <script src="main.js?v=20261025k" defer></script>
 </body>
 </html>

@@ -21,55 +21,19 @@
     const meta = $('meta[name="theme-color"]');
     const apply = (theme) => {
       root.dataset.theme = theme;
-      if (meta) meta.setAttribute("content", theme === "light" ? "#f6f8fb" : "#0a0e14");
-      btn.setAttribute("aria-pressed", String(theme === "light"));
+      if (meta) meta.setAttribute("content", theme === "dark" ? "#0d0e14" : "#edeffd");
+      btn.setAttribute("aria-pressed", String(theme === "dark"));
     };
-    apply(root.dataset.theme === "light" ? "light" : "dark");
+    apply(root.dataset.theme === "dark" ? "dark" : "light");
     btn.addEventListener("click", () => {
-      const next = root.dataset.theme === "light" ? "dark" : "light";
+      const next = root.dataset.theme === "dark" ? "light" : "dark";
       apply(next);
       try { localStorage.setItem("theme", next); } catch (e) { /* sin almacenamiento */ }
     });
   }
 
   /* ----------------------------------------------------------
-     2. Línea mecanografiada del hero
-     ---------------------------------------------------------- */
-  function initTyped() {
-    const el = $("[data-typed]");
-    if (!el || reduced) return;
-    let words;
-    try { words = JSON.parse(el.dataset.words || "[]"); } catch (e) { return; }
-    if (!Array.isArray(words) || words.length < 2) return;
-
-    let w = 0;
-    let i = words[0].length;
-    let deleting = false;
-    el.setAttribute("aria-hidden", "true");
-    const line = el.parentElement;
-    if (line) line.setAttribute("aria-label", words.join(", "));
-
-    function tick() {
-      const word = words[w];
-      el.textContent = word.slice(0, i);
-      let delay = deleting ? 35 : 70;
-      if (!deleting && i === word.length) {
-        deleting = true;
-        delay = 1700;
-      } else if (deleting && i === 0) {
-        deleting = false;
-        w = (w + 1) % words.length;
-        delay = 350;
-      } else {
-        i += deleting ? -1 : 1;
-      }
-      setTimeout(tick, delay);
-    }
-    setTimeout(tick, 1800);
-  }
-
-  /* ----------------------------------------------------------
-     3. Revelado al hacer scroll
+     2. Revelado al hacer scroll
      ---------------------------------------------------------- */
   function initReveal() {
     const els = $$(".reveal");
@@ -92,7 +56,7 @@
   }
 
   /* ----------------------------------------------------------
-     4. Sección activa en la navegación
+     3. Sección activa en la navegación
      ---------------------------------------------------------- */
   function initNavSpy() {
     if (typeof IntersectionObserver === "undefined") return;
@@ -115,7 +79,7 @@
   }
 
   /* ----------------------------------------------------------
-     5. Copiar correo
+     4. Copiar correo
      ---------------------------------------------------------- */
   function initCopy() {
     $$("[data-copy]").forEach((btn) => {
@@ -133,7 +97,7 @@
   }
 
   /* ----------------------------------------------------------
-     6. Formulario de contacto (mailto, sin servicios externos)
+     5. Formulario de contacto (mailto, sin servicios externos)
      ---------------------------------------------------------- */
   function initForm() {
     const form = $("#contact-form");
@@ -202,7 +166,6 @@
      ---------------------------------------------------------- */
   function boot() {
     safe(initTheme, "initTheme");
-    safe(initTyped, "initTyped");
     safe(initReveal, "initReveal");
     safe(initNavSpy, "initNavSpy");
     safe(initCopy, "initCopy");
