@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
   <link rel="preload" href="../assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../styles.css?v=20261025k">
+  <link rel="stylesheet" href="../styles.css?v=20261025l">
 
   <script type="application/ld+json">
   {
@@ -291,13 +291,15 @@
           </ul>
 
           <form class="reveal" id="contact-form" novalidate
-                action="mailto:demiansoriav@gmail.com" method="post" enctype="text/plain"
+                action="https://api.web3forms.com/submit" method="POST"
+                data-endpoint="https://api.web3forms.com/submit"
                 data-to="demiansoriav@gmail.com"
-                data-subject="Contact from the website"
-                data-label-name="Name" data-label-email="Email" data-label-msg="Message"
                 data-e-name="Please enter your name." data-e-email="Please enter a valid email address." data-e-msg="Please write a message (at least 10 characters)."
-                data-ok="Your email app will open with the message ready. Press send there to finish."
-                data-copy-hint="If it doesn't open, write to me directly at">
+                data-sending="Sending…" data-sent="Message sent! I'll get back to you as soon as I can." data-fail="It couldn't be sent. Please try again or write to me directly at">
+            <input type="hidden" name="access_key" value="eef2a2b2-ebfb-4b62-925e-6abe126f3256">
+            <input type="hidden" name="subject" value="Message from the website">
+            <input type="hidden" name="from_name" value="Web demiansoriavicente.github.io">
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="field">
               <label for="f-name">name</label>
               <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100">
@@ -321,7 +323,7 @@
               <button class="btn solid" type="submit">Send message</button>
             </div>
             <p class="status" role="status" aria-live="polite" data-status></p>
-            <p class="note">This form opens your email app with the message prepared; nothing is stored on this site.</p>
+            <p class="note">Your message is sent through Web3Forms and reaches me directly by email. This site stores nothing.</p>
           </form>
         </div>
       </div>
@@ -336,6 +338,6 @@
     </div>
   </footer>
 
-  <script src="../main.js?v=20261025k" defer></script>
+  <script src="../main.js?v=20261025l" defer></script>
 </body>
 </html>

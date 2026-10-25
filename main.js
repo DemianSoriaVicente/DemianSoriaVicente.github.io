@@ -97,19 +97,19 @@
   }
 
   /* ----------------------------------------------------------
-     5. Formulario de contacto (mailto, sin servicios externos)
+     5. Formulario de contacto (envío con Web3Forms)
      ---------------------------------------------------------- */
   function initForm() {
     const form = $("#contact-form");
     if (!form) return;
     const d = form.dataset;
     const status = $("[data-status]", form);
+    const submit = $('button[type="submit"]', form);
     const fields = {
       name: $("#f-name", form),
       email: $("#f-email", form),
       msg: $("#f-msg", form),
     };
-    const trap = $("#f-web", form);
 
     const setErr = (key, text) => {
       const out = $('[data-err="' + key + '"]', form);
@@ -117,47 +117,63 @@
       if (text) fields[key].setAttribute("aria-invalid", "true");
       else fields[key].removeAttribute("aria-invalid");
     };
+    const setStatus = (text) => { if (status) status.textContent = text || ""; };
 
     const validate = () => {
-      let first = null;
       const name = fields.name.value.trim();
       const email = fields.email.value.trim();
       const msg = fields.msg.value.trim();
       const okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-
       setErr("name", name ? "" : d.eName);
       setErr("email", okEmail ? "" : d.eEmail);
       setErr("msg", msg.length >= 10 ? "" : d.eMsg);
-      if (!name) first = fields.name;
-      else if (!okEmail) first = fields.email;
-      else if (msg.length < 10) first = fields.msg;
-      return first ? { first } : { name, email, msg };
+      if (!name) return { first: fields.name };
+      if (!okEmail) return { first: fields.email };
+      if (msg.length < 10) return { first: fields.msg };
+      return { name, email, msg };
     };
 
     Object.keys(fields).forEach((key) => {
       fields[key].addEventListener("input", () => setErr(key, ""));
     });
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      if (trap && trap.value) return; /* antispam: campo trampa relleno */
       const res = validate();
       if (res.first) {
         res.first.focus();
-        if (status) status.textContent = "";
+        setStatus("");
         return;
       }
-      const body =
-        d.labelName + ": " + res.name + "\r\n" +
-        d.labelEmail + ": " + res.email + "\r\n\r\n" +
-        res.msg;
-      const href = "mailto:" + d.to +
-        "?subject=" + encodeURIComponent(d.subject + " — " + res.name) +
-        "&body=" + encodeURIComponent(body);
-      if (status) {
-        status.textContent = d.ok + " " + d.copyHint + " " + d.to + ".";
+      /* Campos ocultos (clave, asunto, antispam) + los del usuario */
+      const payload = {};
+      new FormData(form).forEach((value, key) => { payload[key] = value; });
+      payload.name = res.name;
+      payload.email = res.email;
+      payload.message = res.msg;
+      delete payload.web;
+      if (form.elements.web && form.elements.web.value) return; /* campo trampa relleno */
+
+      if (submit) submit.disabled = true;
+      setStatus(d.sending);
+      try {
+        const r = await fetch(d.endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await r.json().catch(() => ({}));
+        if (r.ok && data.success) {
+          form.reset();
+          setStatus(d.sent);
+        } else {
+          setStatus(d.fail + " " + d.to + ".");
+        }
+      } catch (err) {
+        setStatus(d.fail + " " + d.to + ".");
+      } finally {
+        if (submit) submit.disabled = false;
       }
-      window.location.href = href;
     });
   }
 
