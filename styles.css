@@ -51,7 +51,7 @@
   --danger: #f87171;
   --code-key: #7dd3fc;
   --code-str: #86efac;
-  --code-com: #6b7a8c;
+  --code-com: #8a98ab;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --radius: 12px;
@@ -70,7 +70,7 @@
   --danger: #b42318;
   --code-key: #0b5cad;
   --code-str: #137a3a;
-  --code-com: #6a7787;
+  --code-com: #5d6a7a;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -145,10 +145,7 @@ h1 {
   letter-spacing: -0.03em;
   font-weight: 600;
 }
-h1 .grad {
-  background: linear-gradient(100deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
+h1 .grad { color: var(--accent); }
 .role { margin: 0.9rem 0 0; font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted); }
 .typed-line { font-family: var(--mono); font-size: clamp(0.95rem, 2.2vw, 1.1rem); margin: 1.1rem 0 0; min-height: 1.7em; }
 .typed-line .arrow { color: var(--accent); }
@@ -193,8 +190,9 @@ section { padding-block: clamp(2.5rem, 6vw, 4rem); border-top: 1px solid var(--l
 .sec-head .tag { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); margin: 0 0 0.4rem; }
 h2 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; line-height: 1.15; font-weight: 600; }
 .sec-head p.sub { margin: 0.7rem 0 0; color: var(--muted); max-width: 40rem; }
-p { margin: 0 0 0.9rem; text-wrap: pretty; }
-.about p { max-width: 46rem; }
+p, dd, li { text-wrap: pretty; }
+p { margin: 0 0 0.9rem; }
+.about p { max-width: 60ch; }
 .about p:last-child { margin-bottom: 0; }
 
 /* Servicios */
@@ -226,7 +224,7 @@ p { margin: 0 0 0.9rem; text-wrap: pretty; }
 .tl h3 { margin: 0; font-size: 1.08rem; font-weight: 600; line-height: 1.4; }
 .tl .meta { display: flex; flex-wrap: wrap; gap: 0 1rem; margin: 0.15rem 0 0.5rem; font-size: 0.9rem; color: var(--muted); }
 .tl .when { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); }
-.tl p { margin: 0; color: var(--muted); max-width: 46rem; }
+.tl p { margin: 0; color: var(--muted); max-width: 60ch; }
 
 /* Formación + certificaciones */
 .list { margin: 0; padding: 0; list-style: none; }
@@ -300,7 +298,7 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--
   .hero::before { display: none; }
   .hero { padding-block: 0 0.6rem; }
   h1 { font-size: 22pt; }
-  h1 .grad { background: none; color: #000; -webkit-text-fill-color: #000; }
+  h1 .grad { color: #000; }
   section { padding-block: 1rem 0; }
   .tl, .card { break-inside: avoid; }
   .js .reveal { opacity: 1 !important; transform: none !important; }
