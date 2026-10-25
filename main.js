@@ -1,8 +1,6 @@
 (function () {
   "use strict";
 
-  /* Demian Soria Vicente — main.js · vanilla, sin dependencias */
-
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const $ = (sel, scope) => (scope || document).querySelector(sel);
   const $$ = (sel, scope) => Array.from((scope || document).querySelectorAll(sel));
@@ -11,9 +9,6 @@
     try { fn(); } catch (e) { console.warn("[" + name + "]", e); }
   }
 
-  /* ----------------------------------------------------------
-     1. Tema claro / oscuro (se recuerda en localStorage)
-     ---------------------------------------------------------- */
   function initTheme() {
     const btn = $("[data-theme-toggle]");
     if (!btn) return;
@@ -28,13 +23,10 @@
     btn.addEventListener("click", () => {
       const next = root.dataset.theme === "dark" ? "light" : "dark";
       apply(next);
-      try { localStorage.setItem("theme", next); } catch (e) { /* sin almacenamiento */ }
+      try { localStorage.setItem("theme", next); } catch (e) {}
     });
   }
 
-  /* ----------------------------------------------------------
-     2. Revelado al hacer scroll
-     ---------------------------------------------------------- */
   function initReveal() {
     const els = $$(".reveal");
     if (!els.length) return;
@@ -51,13 +43,9 @@
       });
     }, { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
     els.forEach((el) => io.observe(el));
-    /* Red de seguridad: si el observer no dispara, se muestra todo */
     setTimeout(() => els.forEach((el) => el.classList.add("in")), 5000);
   }
 
-  /* ----------------------------------------------------------
-     3. Sección activa en la navegación
-     ---------------------------------------------------------- */
   function initNavSpy() {
     if (typeof IntersectionObserver === "undefined") return;
     const links = $$('.nav-links a[href^="#"]');
@@ -78,9 +66,6 @@
     $$("main > section").forEach((sec) => io.observe(sec));
   }
 
-  /* ----------------------------------------------------------
-     4. Copiar correo
-     ---------------------------------------------------------- */
   function initCopy() {
     $$("[data-copy]").forEach((btn) => {
       const label = btn.textContent;
@@ -96,9 +81,6 @@
     });
   }
 
-  /* ----------------------------------------------------------
-     5. Formulario de contacto (envío con Web3Forms)
-     ---------------------------------------------------------- */
   function initForm() {
     const form = $("#contact-form");
     if (!form) return;
@@ -145,15 +127,13 @@
         setStatus("");
         return;
       }
-      /* Campos ocultos (clave, asunto, antispam) + los del usuario */
       const payload = {};
       new FormData(form).forEach((value, key) => { payload[key] = value; });
       payload.name = res.name;
       payload.email = res.email;
       payload.message = res.msg;
       delete payload.web;
-      if (form.elements.web && form.elements.web.value) return; /* campo trampa relleno */
-
+      if (form.elements.web && form.elements.web.value) return;
       if (submit) submit.disabled = true;
       setStatus(d.sending);
       try {
@@ -177,9 +157,6 @@
     });
   }
 
-  /* ----------------------------------------------------------
-     Boot
-     ---------------------------------------------------------- */
   function boot() {
     safe(initTheme, "initTheme");
     safe(initReveal, "initReveal");

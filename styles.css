@@ -1,6 +1,3 @@
-/* =============================================================
-   0. Fuentes autoalojadas: Bricolage Grotesque y JetBrains Mono
-   ============================================================= */
 @font-face {
   font-family: 'Bricolage Grotesque';
   font-style: normal;
@@ -36,9 +33,6 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-/* =============================================================
-   1. Tokens (claro por defecto; oscuro con [data-theme="dark"])
-   ============================================================= */
 :root {
   color-scheme: light;
   --bg: #edeffd;
@@ -118,9 +112,6 @@ p { margin: 0 0 0.9rem; }
 }
 .skip-link:focus { top: 1rem; }
 
-/* =============================================================
-   2. Navegación en píldoras
-   ============================================================= */
 .nav {
   position: sticky; top: 0; z-index: 50; padding-block: 0.75rem;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -161,9 +152,6 @@ p { margin: 0 0 0.9rem; }
 }
 .cta:hover .dot { transform: rotate(45deg); }
 
-/* =============================================================
-   3. Hero
-   ============================================================= */
 .hero { position: relative; padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(2.5rem, 6vw, 4rem); overflow: hidden; }
 .scribble { position: absolute; z-index: 0; fill: none; stroke: var(--lime); stroke-width: 26; stroke-linecap: round; stroke-linejoin: round; opacity: 0.9; pointer-events: none; }
 .scribble.s1 { left: -9rem; top: 7rem; width: 22rem; }
@@ -234,9 +222,6 @@ p { margin: 0 0 0.9rem; }
   .hero-bottom { grid-template-columns: 1.1fr 0.9fr; gap: 3rem; }
 }
 
-/* =============================================================
-   4. Cinta de palabras
-   ============================================================= */
 .band-clip { overflow: hidden; padding-block: 1.6rem 1.2rem; }
 .band {
   background: var(--ink); color: var(--lime); overflow: hidden;
@@ -254,9 +239,6 @@ p { margin: 0 0 0.9rem; }
 :root[data-theme="dark"] .band { background: var(--lime); color: #0e0f14; }
 :root[data-theme="dark"] .band-set span::after { background: #0e0f14; }
 
-/* =============================================================
-   5. Secciones
-   ============================================================= */
 section { padding-block: clamp(3.5rem, 8vw, 6rem); }
 .tag { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); margin: 0 0 1rem; }
 .tag b { color: var(--ink); font-weight: 500; }
@@ -265,13 +247,11 @@ h2.display em { font-style: normal; color: var(--accent); }
 .sec-head { margin-bottom: clamp(1.8rem, 4vw, 3rem); }
 .sec-head p.sub { margin: 1rem 0 0; color: var(--muted); max-width: 38rem; font-size: 1.1rem; }
 
-/* Sobre mí */
 .about-grid { display: grid; gap: 2rem; }
 .about-grid p { max-width: 52ch; }
 .about-grid p:first-of-type { font-size: 1.2rem; color: var(--ink); }
 @media (min-width: 900px) { .about-grid { grid-template-columns: 1fr 1.05fr; gap: 4rem; align-items: start; } }
 
-/* Servicios: bloques de color */
 .cards { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 @media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
 .card {
@@ -298,7 +278,6 @@ h2.display em { font-style: normal; color: var(--accent); }
   border: 1.5px solid currentColor; border-radius: var(--pill);
 }
 
-/* Proyectos */
 .projects { display: grid; gap: 1.8rem; grid-template-columns: 1fr; }
 @media (min-width: 900px) { .projects { grid-template-columns: 1fr 1fr; gap: 2rem; } }
 .project {
@@ -318,7 +297,6 @@ h2.display em { font-style: normal; color: var(--accent); }
 .project .chips li { border-color: var(--ink); color: var(--ink); }
 .project .btn { margin-top: auto; }
 
-/* Experiencia */
 .jobs { margin: 0; padding: 0; list-style: none; border-top: 1.5px solid var(--ink); }
 .job { display: grid; gap: 0.8rem 2rem; padding-block: 1.8rem; border-bottom: 1.5px solid var(--ink); }
 .job .yr { font-family: var(--display); font-weight: 800; font-stretch: 75%; text-transform: uppercase; font-size: clamp(2.2rem, 6vw, 4rem); line-height: 0.9; color: var(--accent); }
@@ -328,14 +306,12 @@ h2.display em { font-style: normal; color: var(--accent); }
 .job p { margin: 0; color: var(--muted); max-width: 52ch; }
 @media (min-width: 820px) { .job { grid-template-columns: 17rem 1fr; } }
 
-/* Listas (formación, certificaciones) */
 .list { margin: 0; padding: 0; list-style: none; border-top: 1.5px solid var(--ink); }
 .list li { padding: 0.9rem 0; border-bottom: 1px solid var(--line); font-weight: 500; color: var(--ink); }
 .list small { display: block; margin-top: 0.15rem; color: var(--muted); font-size: 0.9rem; font-weight: 400; }
 .list .when { font-family: var(--mono); font-size: 0.8rem; white-space: nowrap; }
 @media (min-width: 760px) { .list.cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; } }
 
-/* Tecnologías */
 .stack { display: grid; gap: 0.5rem 2rem; margin: 0; border-top: 1.5px solid var(--ink); }
 .stack dt { font-family: var(--mono); font-size: 0.85rem; color: var(--accent); padding-top: 1.1rem; }
 .stack dd { margin: 0; padding-bottom: 1.1rem; border-bottom: 1px solid var(--line); }
@@ -346,9 +322,6 @@ h2.display em { font-style: normal; color: var(--accent); }
 }
 .stack .chips li { border-color: var(--ink); color: var(--ink); font-family: var(--sans); font-size: 0.9rem; padding: 0.5rem 0.9rem; }
 
-/* =============================================================
-   6. Contacto (bloque azul)
-   ============================================================= */
 .contact { background: var(--blue); color: #fff; margin-top: 2rem; }
 .contact .tag, .contact .tag b { color: var(--lime); }
 .contact h2.display { color: var(--lime); font-size: clamp(3.4rem, 14vw, 11rem); }
@@ -384,16 +357,12 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 form .btn.solid::after { background: var(--blue); }
 
-/* Pie */
 .foot { background: var(--ink); color: var(--bg); padding-block: 1.4rem; font-size: 0.88rem; }
 .foot .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 1rem; }
 .foot p { margin: 0; }
 .foot a { color: var(--lime); }
 :root[data-theme="dark"] .foot a { color: var(--lime); }
 
-/* =============================================================
-   7. Revelado suave (solo con JS y sin reduced-motion)
-   ============================================================= */
 @media (prefers-reduced-motion: no-preference) {
   .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
   .js .reveal.in { opacity: 1; transform: none; }
@@ -403,9 +372,6 @@ form .btn.solid::after { background: var(--blue); }
   .btn, .card, .project, .pill, .cta, .cta .dot { transition: none; }
 }
 
-/* =============================================================
-   8. Móvil
-   ============================================================= */
 @media (max-width: 719px) {
   .nav { position: static; }
   .nav-in { justify-content: space-between; }
@@ -418,9 +384,6 @@ form .btn.solid::after { background: var(--blue); }
   .card { min-height: 18rem; }
 }
 
-/* =============================================================
-   9. Impresión: el CV se guarda como PDF en claro
-   ============================================================= */
 @media print {
   @page { size: A4; margin: 14mm 16mm; }
   :root, :root[data-theme="dark"] {
