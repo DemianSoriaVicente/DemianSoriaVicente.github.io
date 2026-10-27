@@ -2,7 +2,7 @@
 
 🇬🇧 English · [🇪🇸 Español](#español)
 
-Personal website of Demian Soria Vicente (web developer · AI & automation · IT support): profile, services, experience, education, tech stack and a contact form. Available in Spanish and English.
+Personal website of Demian Soria Vicente (web developer · AI & automation · IT support): profile, services, experience, tech stack and a contact form. Available in Spanish and English.
 
 🔗 **https://demiansoriavicente.github.io/** (ES) · **https://demiansoriavicente.github.io/en/** (EN)
 
@@ -34,7 +34,7 @@ Published with GitHub Pages
 
 [🇬🇧 English](#demian-soria-vicente--portfolio--résumé) · 🇪🇸 Español
 
-Web personal de Demian Soria Vicente (desarrollador web · IA y automatización · soporte TIC): perfil, servicios, experiencia, formación, tecnologías y formulario de contacto. Disponible en español y en inglés.
+Web personal de Demian Soria Vicente (desarrollador web · IA y automatización · soporte TIC): perfil, servicios, experiencia, tecnologías y formulario de contacto. Disponible en español y en inglés.
 
 🔗 **https://demiansoriavicente.github.io/** (ES) · **https://demiansoriavicente.github.io/en/** (EN)
 
