@@ -17,8 +17,10 @@ Personal website of Demian Soria Vicente (web developer · AI & automation · IT
 ## Structure
 
 ```
-index.html      Spanish page (root)
-en/index.html   English page
+index.html           Spanish home (services, projects, contact)
+en/index.html        English home
+sobre-mi/           Spanish about page (profile, experience, certifications, stack)
+en/about/           English about page
 main.js         Theme, animations and contact form
 styles.css      Styles
 assets/         Fonts and images
@@ -49,8 +51,10 @@ Web personal de Demian Soria Vicente (desarrollador web · IA y automatización 
 ## Estructura
 
 ```
-index.html      Página en español (raíz)
-en/index.html   Página en inglés
+index.html           Portada en español (servicios, proyectos, contacto)
+en/index.html        Portada en inglés
+sobre-mi/           Sobre mí en español (perfil, experiencia, certificaciones, tecnologías)
+en/about/            Sobre mí en inglés
 main.js         Tema, animaciones y formulario de contacto
 styles.css      Estilos
 assets/         Fuentes e imágenes
